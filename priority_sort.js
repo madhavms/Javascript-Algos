@@ -19,15 +19,19 @@ function generate_radom_objects(n){
 const obj_array = generate_radom_objects(10);
 
 function sort_object_array(obj_array) {
-    console.log('\nORIGINAL ARRAY:');
-    console.log(obj_array,'\n');
-    obj_array = obj_array.sort((a,b) => {
 
+    obj_array = obj_array.sort((a,b) => {
         a_priority = a.priority == undefined? 0: a.priority;
         b_priority = b.priority == undefined? 0: b.priority;
         return a_priority > b_priority ? 1 : -1});
-    console.log('\nSORTED ARRAY:');
-    console.log(obj_array,'\n');
+
+    return obj_array;
 }
 
-sort_object_array(obj_array);
+console.log('\nORIGINAL ARRAY:');
+console.log(obj_array,'\n');
+
+let sorted_array = sort_object_array(obj_array);
+
+console.log('\SORTED ARRAY:');
+console.log(sorted_array,'\n');
