@@ -23,14 +23,8 @@ function sort_object_array(obj_array) {
     console.log(obj_array,'\n');
     obj_array = obj_array.sort((a,b) => {
 
-        a_priority = a.priority;
-        b_priority = b.priority;
-        if(a_priority == undefined){
-            a_priority = 0;
-        }
-        if(b_priority == undefined){
-            b_priority = 0;
-        }
+        a_priority = a.priority == undefined? 0: a.priority;
+        b_priority = b.priority == undefined? 0: b.priority;
         return a_priority > b_priority ? 1 : -1});
     console.log('\nSORTED ARRAY:');
     console.log(obj_array,'\n');
