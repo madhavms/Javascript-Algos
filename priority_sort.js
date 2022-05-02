@@ -1,9 +1,9 @@
-function data_object(priority, value){
+function dataObject(priority, value){
     this.priority = priority;
     this.value = value;
 }
 
-function generate_radom_objects(n){
+function generateRadomObject(n){
     let list = [undefined]
     for(let idx = 0; idx < 10; idx ++){
         let num = Math.floor((Math.random() * 100) + 1);
@@ -11,27 +11,27 @@ function generate_radom_objects(n){
         if(num % 2 == 0) list.push(undefined);
     }
 
-    obj_list = list.map(num => new data_object(num, 'data_'+num));
+    objList = list.map(num => new dataObject(num, 'data_'+num));
 
-    return obj_list;
+    return objList;
 }
 
-const obj_array = generate_radom_objects(10);
+const objArray = generateRadomObject(10);
 
-function sort_object_array(obj_array) {
+function sortObjectArray(objArray) {
 
-    obj_array = obj_array.sort((a,b) => {
-        a_priority = a.priority == undefined? 0: a.priority;
-        b_priority = b.priority == undefined? 0: b.priority;
+    objArray = objArray.sort((a,b) => {
+        a_priority = a.priority || 0;
+        b_priority = b.priority || 0;
         return a_priority > b_priority ? 1 : -1});
 
-    return obj_array;
+    return objArray;
 }
 
 console.log('\nORIGINAL ARRAY:');
-console.log(obj_array,'\n');
+console.log(objArray,'\n');
 
-let sorted_array = sort_object_array(obj_array);
+let sortedArray = sortObjectArray(objArray);
 
 console.log('\SORTED ARRAY:');
-console.log(sorted_array,'\n');
+console.log(sortedArray,'\n');
