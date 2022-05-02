@@ -30,7 +30,7 @@ function insertNodes(vals, linked_list){
     let currentNode = linked_list;
     let nextDistinctNode = linked_list.next;
 
-    vals.map(val => {
+    vals.forEach(val => {
         nextDistinctNode = new Node(val);
         currentNode.next = nextDistinctNode;
         currentNode = nextDistinctNode;
